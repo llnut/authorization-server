@@ -1,0 +1,66 @@
+// Copyright 2015 gRPC authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+option go_package = "github.com/jcsora/user_server";
+
+package jcsora.user_server;
+
+import "user.proto";
+
+service PbUser {
+    rpc UserIndex (Message) returns (Message) {}
+    rpc UserShow (Message) returns (Message) {}
+    rpc UserStore (Message) returns (Message) {}
+    rpc Login (Message) returns (Message) {}
+    rpc RefreshToken (Message) returns (Message) {}
+    rpc UserProfileUpdate (Message) returns (Message) {}
+    rpc PasswordUpdate (Message) returns (Message) {}
+    //rpc UserDestroy (Message) returns (Message) {}
+}
+
+message Message {
+    int32 MsgType = 1;
+    fixed32 sequence = 2;
+    Request request = 3;
+    Response response = 4;
+}
+
+message Request {
+    UserIndexRequest user_index = 1;
+    UserShowRequest user_show = 2;
+    UserStoreRequest user_store = 3;
+    LoginRequest login = 4;
+    RefreshTokenRequest refresh_token = 5;
+    UserProfileUpdateRequest user_profile_update = 6;
+    PasswordUpdateRequest password_update = 7;
+    //UserDestroyRequest user_destroy = 4;
+}
+
+message Response {
+    bool result = 1;
+    bytes error_description = 2;
+    bool last_block = 3;
+    fixed32 block_index = 4;
+    UserIndexResponse user_index = 5;
+    UserShowResponse user_show = 6;
+    UserStoreResponse user_store = 7;
+    LoginResponse login = 8;
+    RefreshTokenResponse refresh_token = 9;
+    UserProfileUpdateResponse user_profile_update = 10;
+    PasswordUpdateResponse password_update = 11;
+    //UserDestroyResponse user_store = 7;
+}
+

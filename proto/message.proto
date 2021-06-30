@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "github.com/jcsora/user_server";
+
+package jcsora.user_server;
+
+message PaginationMeta {
+    int64 current_page = 1;
+    int64 total_page = 2;
+    int64 limit = 3;
+    int64 total = 4;
+}
