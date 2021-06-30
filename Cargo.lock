@@ -1232,7 +1232,6 @@ dependencies = [
 name = "sora-user-server-grpc"
 version = "0.1.0"
 dependencies = [
- "anyhow",
  "chrono",
  "config",
  "diesel",
@@ -1252,7 +1251,6 @@ dependencies = [
  "tonic-build",
  "tracing",
  "tracing-subscriber",
- "url 2.2.1",
 ]
 
 [[package]]

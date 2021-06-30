@@ -16,14 +16,11 @@ path = "src/client.rs"
 
 [dependencies]
 dotenv = "0.15.0"
-url = "2.2.1"
 serde = { version = "1.0.125", features = ["derive"] }
 serde_json = "1.0.64"
 diesel = { version = "1.4.6", features = ["extras", "mysql"] }
 chrono = "0.4.19"
 tokio = { version = "1.4.0", features = ["rt-multi-thread", "time", "macros", "signal"]}
-#futures = "0.3.15"
-anyhow = "1.0.39"
 thiserror = "1.0.24"
 config = "0.11.0"
 tracing = "0.1.25"
