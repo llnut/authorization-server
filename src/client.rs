@@ -7,7 +7,7 @@ use user_server::{
 };
 
 pub mod user_server {
-    tonic::include_proto!("jcsora.user_server");
+    tonic::include_proto!("user_server");
 }
 
 #[tokio::main]

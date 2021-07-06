@@ -6,7 +6,7 @@ use tonic::transport::Server;
 use user_server::pb_user_server::PbUserServer;
 
 pub mod user_server {
-    tonic::include_proto!("jcsora.user_server");
+    tonic::include_proto!("user_server");
 }
 
 mod config;

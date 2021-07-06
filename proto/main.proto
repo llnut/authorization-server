@@ -14,9 +14,9 @@
 
 syntax = "proto3";
 
-option go_package = "github.com/jcsora/user_server";
+option go_package = "proto/user_server";
 
-package jcsora.user_server;
+package user_server;
 
 import "user.proto";
 
