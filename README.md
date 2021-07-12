@@ -30,6 +30,18 @@ echo DATABASE_URL=mysql://username:password@localhost/authorization_server > .en
 diesel setup
 ```
 
+- Run server
+
+```
+cargo run --bin server
+```
+
+- Run client
+
+```
+cargo run --bin client
+```
+
 ## Crates Used
 
 - [tonic](https://crates.io/crates/tonic) // A gRPC over HTTP/2 implementation focused on high performance, interoperability, and flexibility.
