@@ -1,4 +1,5 @@
 # authorization-server
+
 Authorization Server with Rust using Tonic.
 
 ## Function implemented
@@ -9,11 +10,31 @@ Authorization Server with Rust using Tonic.
 - Token authentication
 - Get and automatically refreshes Token
 
-##### Crates Used
+## Usage
 
-- [tonic](https://crates.io/crates/tonic) // A gRPC over HTTP/2 implementation focused on high performance, interoperability, and flexibility. 
+- Install the Diesel CLI tool
+
+```
+cargo install diesel_cli --no-default-features --features mysql
+```
+
+- Make sure your `.env` file already exists and that `DATABASE_URL` is set
+
+```
+echo DATABASE_URL=mysql://username:password@localhost/authorization_server > .env
+```
+
+- Create database and run migration
+
+```
+diesel setup
+```
+
+## Crates Used
+
+- [tonic](https://crates.io/crates/tonic) // A gRPC over HTTP/2 implementation focused on high performance, interoperability, and flexibility.
 - [tonic-build](https://crates.io/crates/tonic-build) // Codegen module of `tonic` gRPC implementation.
-- [tokio](https://crates.io/crates/tokio) // An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications. 
+- [tokio](https://crates.io/crates/tokio) // An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 - [rust-argon2](https://crates.io/crates/rust-argon2) // crate for hashing passwords using the cryptographically-secure Argon2 hashing algorithm.
 - [chrono](https://crates.io/crates/chrono) // Date and time library for Rust.
 - [diesel](https://crates.io/crates/diesel) // A safe, extensible ORM and Query Builder for PostgreSQL, SQLite, and MySQL.
@@ -26,8 +47,8 @@ Authorization Server with Rust using Tonic.
 - [serde_json](https://crates.io/crates/serde_json) // A JSON serialization file format.
 - [config](https://crates.io/crates/config) // Layered configuration system for Rust applications.
 - [tracing](https://crates.io/crates/tracing) // Application-level tracing for Rust.
-- [tracing-subscriber](https://crates.io/crates/tracing-subscriber) // Utilities for implementing and composing `tracing` subscribers. 
-- [rand](https://crates.io/crates/rand) // Random number generators and other randomness functionality. 
+- [tracing-subscriber](https://crates.io/crates/tracing-subscriber) // Utilities for implementing and composing `tracing` subscribers.
+- [rand](https://crates.io/crates/rand) // Random number generators and other randomness functionality.
 - [redis](https://crates.io/crates/redis) // Redis driver for Rust.
 - [jsonwebtoken](https://crates.io/crates/jsonwebtoken) // Create and decode JWTs in a strongly typed way.
 - [prost](https://crates.io/crates/prost) // A Protocol Buffers implementation for the Rust Language.
@@ -40,3 +61,4 @@ Authorization Server with Rust using Tonic.
 - Pg support
 - Middleware
 - etc
+
